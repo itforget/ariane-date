@@ -1,10 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import { Howl } from 'howler';
 
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  
 
   const alternarTexto = () => {
     setIndex((index + 1) % textos.length);
@@ -49,7 +51,14 @@ export default function Home() {
   const handleButtonClick = () => {
     setAutoPlay(true);
     setIsVisible(false); // Esconde o texto ao clicar no botão
-  };
+   
+    // Toca a música
+    music.play();
+   };
+  const music = new Howl({
+    src: ['/musica.mp3'],
+   });
+   
 
   return (
     <div className="flex place-content-center p-24 flex-col">
