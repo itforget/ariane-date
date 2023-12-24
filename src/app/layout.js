@@ -1,10 +1,10 @@
-import { Roboto_Condensed } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import './globals.css'
 import Flores from "./components/flowers"
 
 
-const inter = Roboto_Condensed({ 
-  weight: ['400', '500', '600', '700', '800', '900'],
+const inter = Roboto({ 
+  weight: ['400'],
   subsets: ['latin'] })
 
 export const metadata = {
